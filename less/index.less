@@ -1,0 +1,420 @@
+// Variables and Mixins
+@import 'variables.less';
+@import 'mixins.less';
+@import 'reset.less';
+
+
+
+
+*{
+    box-sizing: border-box;
+}
+body{
+    background: @bg-color;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+
+
+                                //----------start header/nav stuff----------
+.main-nav{
+    width: 80%;
+    height: 80vh;
+    background: black;
+    margin: 50px auto;
+    border-radius: 30px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.9);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+   
+    .nav-link{
+        width: 80%;
+        margin: 0 auto;
+        border-bottom: 1px solid white;
+        padding-bottom: 10px;
+        color: white;
+        text-align: center;
+        font-family: @font-family-1;
+        text-decoration: none;
+        font-size: 30px;
+        margin: 20px 40px;
+    }
+    .nav-link:hover{
+        color: @bg-color-dark;
+    }
+    .login{
+        font-family: @font-family-1;
+        color: black;
+        background: white;
+        padding: 10px;
+        font-family: sans-serif;
+        text-decoration: none;
+        font-size: 33px;
+        margin: 20px 40px;
+        text-align: center;
+        border: 2px solid white;
+        border-radius: 5px;
+
+    }
+    .login:hover{
+        color: @bg-color;
+        border: 2px solid @bg-color;
+        background: black;
+    }
+    .close-nav{
+        font-family: sans-serif;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        color: white;
+        text-decoration: none;
+        background: @font-color-1;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+    }
+
+
+}//navigation
+
+.nav-display-toggle{
+    display: flex;
+}//toggle flex/none display on main nav
+
+.header{
+    padding: 5px;
+    width: 100%;
+    height: 70px;
+    padding: 0 20px;
+    background: @black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 5px solid @font-color-1;
+    position: sticky;
+    top: 0;
+    margin-bottom: -10vh;
+    z-index: 1;
+
+    h2{
+        font-size: 35px;
+        color: @white;
+        font-family: @font-family-2;
+        cursor: pointer;
+    }
+
+
+    .nav-button{
+        width: 90px;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-around;
+        border-left: 2px solid @white;
+
+        .nav1{
+            width: 40px;
+            height: 6px;
+            background: @font-color-1;
+        }
+        
+
+        .nav2{
+            width: 30px;
+            height: 6px;
+            background: @font-color-1;
+        }
+
+        .nav3{
+            width: 50px;
+            height: 6px;
+            background: @font-color-1;
+        }
+    }//end base nav button
+
+    .nav-button:hover{
+        cursor: pointer;
+        .nav1{
+            animation: NAV1HOVER 1s ease-in-out;
+        }
+        .nav2{
+            animation: NAV2HOVER 1s ease-in-out;
+        }
+        .nav3{
+            animation: NAV3HOVER 1s ease-in-out;
+        }
+    }//nav button hover effect
+
+    @keyframes NAV1HOVER{
+
+        0%{width: 40px; }
+        50%{width: 55px; }
+        100%{width: 40px; }
+    }
+
+    @keyframes NAV2HOVER{
+
+        0%{width: 30px; }
+        50%{width: 65px; }
+        100%{width: 30px; }
+    }
+
+    @keyframes NAV3HOVER{
+
+        0%{width: 50px; }
+        50%{width: 25px; }
+        100%{width: 50px; }
+    }// end mobile nav button section
+
+    .tab-plus-nav{
+        display: none;
+    }
+
+
+    @media (@lrg-tablet){
+        .nav-button{
+            display: none;
+        }
+        .tab-plus-nav{
+            display: block;
+
+
+            .nav-link{
+                width: 80%;
+                margin: 0 auto;
+                color: white;
+                text-align: center;
+                font-family: @font-family-1;
+                text-decoration: none;
+                font-size: 18px;
+                margin: 20px 10px;
+            }
+            .left-border{
+                border-left: 2px solid @white;
+                padding-left: 14px;
+            }
+            .nav-link:hover{
+                color: @bg-color-dark;
+            }
+            .login{
+                font-family: @font-family-1;
+                color: @font-color-1;
+                background: white;
+                padding: 10px;
+                font-family: sans-serif;
+                text-decoration: none;
+                font-size: 18px;
+                margin: 20px 15px;
+                text-align: center;
+                border: 2px solid @font-color-1;
+                border-radius: 5px;
+        
+            }
+            .login:hover{
+                color: @bg-color;
+                border: 2px solid @bg-color;
+                background: black;
+            }
+        }
+    }
+
+
+
+
+}//end header
+
+.body-toggle-class{
+    display: none;
+} //toggles all info off when nav button is pressed..
+
+.body-cover{
+    background: white;
+}//change bg color when opening nav
+
+                                //----------end header/nav stuff----------
+                                //----------begin section one----------
+.section-one{
+    width: 100%;
+    height: 100vh;
+    padding-top: 10vh;
+    background: white;
+    .sec-one-top-flex{
+        @media (@lrg-tablet){
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        @media (@computer){
+            justify-content: space-around;
+        }
+        h1{
+            display: block;
+            padding: 20px;
+            font-family: @font-family-1;
+            font-size: 55px;
+            color: @black;
+            @media (@lrg-tablet){
+                font-size: 65px;
+            }
+            @media (@computer){
+                font-size: 90px;
+            }
+        }//end h1
+        .people{
+            text-align: center;
+            .man-woman{
+                width: 120px;
+                height: auto;
+                background: @font-color-1;
+                padding: 10px;
+                margin: 10px 5vw;
+                border-radius: 20px;
+                box-shadow: 0 0 15px rgba(0,0,0,0.4);
+                transform: scale(1.1) rotate(4deg);
+                @media (@lrg-tablet){
+                    //width: 135px;
+                 }
+                @media (@computer){
+                   width: 150px;
+                }
+            }//end man/women specific
+        }//end people
+    }//end sec 1 top flex piece
+
+    .sec-one-dash-two{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        .activities{
+            margin-top: 50px;
+            text-align: center;
+            animation: OPACITYFADE 1.5s ease;
+            .activity{
+
+                width: 45px;
+                height: auto;
+                @media (@sml-tablet){
+                    width: 48px;
+                    margin: 0 15px;
+                }
+                @media (@lrg-tablet){
+                    width: 55px;
+                    margin: 0 30px;
+                }
+            }
+
+
+        }//end .activities
+        p{
+            display: none;
+            width: 80%;
+            padding: 20px 10px;
+            font-size: 24px;
+            color: @black;
+            font-family: @font-family-1;
+            text-align: center;
+            @media(@lrg-tablet){
+                display: block;
+            }
+            @media(@computer){
+                font-size: 27px;
+            }
+        }//end paragraph
+    }
+
+    .down-arrow{
+        position: absolute;
+        width: 40px;
+        height: auto;
+        right:5px;
+        bottom: 5px;
+        cursor: pointer;
+        animation: OPACITYFADE 1s ease;
+        @media (@sml-tablet){
+            width: 70px;
+        }
+        @media (@lrg-tablet){
+            width: 80px;
+        }
+        @media (@computer){
+           width: 100px;
+        }
+    }
+
+}
+
+@keyframes OPACITYFADE{
+    0%{ opacity: 0; }
+    100%{ opacity: 1; }
+}
+                                //----------end section two----------
+.section-two{
+    width: 100%;
+    height: 100vh;
+    background: #F8ECF8;
+    .tabs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+        .tab{
+            display: block;
+            margin-top: 20px;
+            width: 30%;
+            text-align: center;
+            padding: 20px 0;
+            border: 1px solid @body-bg-2;
+            background-color: @black;
+            color: @white;
+            font-family: @font-family-1;
+            font-size: 25px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .tab:nth-child(1){
+            border: 4px solid #FC3768;
+            color: #FC3768;
+        }
+    }
+    .content{
+        width: 90%;
+        height: 70vh;
+        margin: 20px auto;
+        background: @black;
+        border-radius: 10px;
+        display: none;
+        padding: 30px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.4);
+        
+        h3{
+            font-family: @font-family-2;
+            color: @font-color-1;
+            display: block;
+            width: 100%;
+            font-size: 30px;
+            @media (@lrg-tablet){
+                font-size: 48px;
+            }
+        }
+    }
+    .tabs-item-selected {
+        display: flex;
+        flex-direction: column;
+        p{
+            font-family: @font-family-1;
+            font-size: 20px;
+            width: 100%;
+            margin-top: 15px;
+            color: @white;
+            @media (@lrg-tablet){
+                font-size: 32px;
+            }
+        }
+      }
+}
