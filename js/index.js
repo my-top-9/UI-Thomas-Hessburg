@@ -79,7 +79,7 @@ class TabLink {
           tab.style.border = "none";
           tab.style.color = "#EDEDED";
         } )  
-      this.element.style.border = "4px solid #FC3768";
+      this.element.style.border = "4px solid #EDEDED";
       this.element.style.color = "#FC3768";
 
       const links = document.querySelectorAll(".content");

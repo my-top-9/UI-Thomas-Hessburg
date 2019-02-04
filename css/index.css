@@ -474,7 +474,7 @@ html {
 .section-two {
   width: 100%;
   height: 100vh;
-  background: #634b63;
+  background: #EAF7F9;
   position: relative;
 }
 .section-two .tabs {
@@ -497,7 +497,7 @@ html {
   cursor: pointer;
 }
 .section-two .tabs .tab:nth-child(1) {
-  border: 4px solid #FC3768;
+  border: 4px solid #EDEDED;
   color: #FC3768;
 }
 .section-two .content {
@@ -512,10 +512,11 @@ html {
 }
 .section-two .content h3 {
   font-family: 'Major Mono Display', monospace;
-  color: #FC3768;
+  color: #262626;
   display: block;
   width: 100%;
   font-size: 30px;
+  background: #EDEDED;
 }
 @media (min-width: 780px) {
   .section-two .content h3 {
@@ -536,7 +537,7 @@ html {
   font-size: 20px;
   width: 100%;
   margin-top: 15px;
-  color: #EDEDED;
+  color: #EAF7F9;
 }
 @media (min-width: 480px) {
   .section-two .tabs-item-selected p {
@@ -577,6 +578,125 @@ html {
 }
 .section-three {
   width: 100%;
-  height: 100vh;
-  background: #9BE5F0;
+  background: #301077;
+  padding: 20px;
+}
+.section-three h3 {
+  width: 100%;
+  font-family: 'Krub', sans-serif;
+  font-size: 42px;
+  color: #EDEDED;
+  margin-top: 20px;
+  line-height: 52px;
+  white-space: nowrap;
+}
+.section-three h3 span {
+  font-size: 12px;
+}
+@media (min-width: 780px) {
+  .section-three h3 span {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  .section-three h3 span {
+    font-size: 24px;
+  }
+}
+@media (min-width: 480px) {
+  .section-three h3 {
+    font-size: 58px;
+  }
+}
+@media (min-width: 780px) {
+  .section-three h3 {
+    font-size: 85px;
+  }
+}
+@media (min-width: 1024px) {
+  .section-three h3 {
+    font-size: 110px;
+  }
+}
+.section-three .section-three-info {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px 0;
+  color: #EDEDED;
+  font-family: 'Krub', sans-serif;
+}
+@media (min-width: 780px) {
+  .section-three .section-three-info {
+    width: 45%;
+  }
+}
+.section-three .section-three-info h4 {
+  font-size: 25px;
+  text-align: end;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #EDEDED;
+  padding-bottom: 10px;
+}
+@media (min-width: 480px) {
+  .section-three .section-three-info h4 {
+    font-size: 30px;
+  }
+}
+@media (min-width: 780px) {
+  .section-three .section-three-info h4 {
+    font-size: 35px;
+  }
+}
+@media (min-width: 1024px) {
+  .section-three .section-three-info h4 {
+    font-size: 35px;
+  }
+}
+.section-three .section-three-info p {
+  font-size: 18px;
+}
+@media (min-width: 480px) {
+  .section-three .section-three-info p {
+    font-size: 22px;
+  }
+}
+@media (min-width: 780px) {
+  .section-three .section-three-info p {
+    font-size: 25px;
+  }
+}
+@media (min-width: 1024px) {
+  .section-three .section-three-info p {
+    font-size: 28px;
+  }
+}
+.section-three .graphic {
+  width: 100%;
+  height: auto;
+  padding: 0 80px;
+}
+@media (min-width: 780px) {
+  .section-three .graphic {
+    width: 400px;
+    height: 400px;
+  }
+}
+@media (min-width: 1024px) {
+  .section-three .graphic {
+    width: 600px;
+    height: 600px;
+    padding: 0 80px;
+  }
+}
+@media (min-width: 780px) {
+  .s-three-top-container {
+    display: flex;
+  }
+}
+@media (min-width: 780px) {
+  .s-three-bottom-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
