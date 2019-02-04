@@ -17,8 +17,6 @@ html{
 }
 
 
-
-                                //----------start header/nav stuff----------
 .main-nav{
     width: 80%;
     height: 80vh;
@@ -237,8 +235,6 @@ html{
     background: white;
 }//change bg color when opening nav
 
-                                //----------end header/nav stuff----------
-                                //----------begin section one----------
 .section-one{
     width: 100%;
     height: 100vh;
@@ -354,11 +350,11 @@ html{
     0%{ opacity: 0; }
     100%{ opacity: 1; }
 }
-                                //----------end section two----------
 .section-two{
     width: 100%;
     height: 100vh;
-    background: #F8ECF8;
+    background: @section-two-bg;
+    position: relative;
     .tabs{
     display: flex;
     flex-direction: row;
@@ -401,6 +397,9 @@ html{
             @media (@lrg-tablet){
                 font-size: 48px;
             }
+            @media (@computer){
+                font-size: 58px;
+            }
         }
     }
     .tabs-item-selected {
@@ -412,9 +411,37 @@ html{
             width: 100%;
             margin-top: 15px;
             color: @white;
+            @media (@sml-tablet){
+                font-size: 26px;
+            }
             @media (@lrg-tablet){
                 font-size: 32px;
             }
+            @media (@computer){
+                font-size: 37px;
+            }
         }
-      }
+    }
+    .down-arrow{
+        position: absolute;
+        width: 60px;
+        height: auto;
+        bottom: -10px;
+        right: 0;
+        @media (@sml-tablet){
+            width: 70px;
+        }
+        @media (@lrg-tablet){
+            width: 80px;
+        }
+        @media (@computer){
+           width: 90px;
+        }
+    }  
+}
+                                
+.section-three{
+    width: 100%;
+    height: 100vh;
+    background: @bg-color-dark;
 }
