@@ -112,3 +112,60 @@ class TabLink {
   
   
   let links = document.querySelectorAll(".tab").forEach(link => new TabLink(link));
+
+
+
+
+
+
+
+
+
+
+
+
+  //carousel info
+
+  const carouselSlide = document.querySelector(".carousel-slide");
+  const carouselImages = document.querySelectorAll(".carousel-slide img");
+  const prevButton = document.querySelector("#prevButton");
+  const nextButton = document.querySelector("#nextButton");
+
+  let counter = 1;
+
+
+  prevButton.addEventListener("click", function(){
+    Array.from(carouselImages).map(image => image.style.display = "none");
+
+    if(counter>0){
+        counter--;
+    }else{
+        counter = 6;
+    }
+    
+    carouselImages[counter].style.display = "block";
+
+
+    TweenLite.from(".carousel-slide", 1.2, {
+        ease: Bounce.easeOut,
+        scale: 2
+    });
+    
+  })
+
+  nextButton.addEventListener("click", function(){
+    Array.from(carouselImages).map(image => image.style.display = "none");
+    if(counter<6){
+        counter++;
+    }else{
+        counter = 0;
+    }
+    
+    carouselImages[counter].style.display = "block";
+    TweenLite.from(".carousel-slide", 1.2, {
+        ease: Bounce.easeOut,
+        scale: 2
+    });
+    
+    
+  })

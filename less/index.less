@@ -235,6 +235,10 @@ html{
     background: white;
 }//change bg color when opening nav
 
+
+
+
+
 .section-one{
     width: 100%;
     height: 100vh;
@@ -350,6 +354,13 @@ html{
     0%{ opacity: 0; }
     100%{ opacity: 1; }
 }
+
+
+
+
+
+
+
 .section-two{
     width: 100%;
     height: 100vh;
@@ -440,7 +451,15 @@ html{
         }
     }  
 }
-                                
+                 
+
+
+
+
+
+
+
+
 .section-three{
     width: 100%;
     background: @font-color-2;
@@ -546,3 +565,100 @@ html{
         align-items: center;
     }  
 } 
+
+
+
+
+
+
+
+.section-four{
+    width: 100%;
+    background: @font-color-1;
+
+
+
+        
+    .carousel-container{
+        width: 80%;
+
+        @media(@sml-tablet){
+            margin: 0 auto;
+        }
+        .carousel-slide{
+            display: flex;
+            width: 400px;
+            height: 200px;
+            margin: 0 auto;
+            align-items: center;
+            position: relative;
+
+            @media(@lrg-tablet){
+                width: 700px;
+                height: 350px;
+            }
+            @media(@computer){
+                width: 900px;
+                height: 450px;
+            }
+
+            img{
+                display: none;
+                width: 400px;
+                height: 200px;
+                box-shadow: 0 0 15px rgba(0,0,0,0.4);
+
+                @media(@lrg-tablet){
+                    width: 700px;
+                    height: 350px;
+                }
+                @media(@computer){
+                    width: 900px;
+                    height: 450px;
+                }
+            }
+            #image-one{
+                display: block;
+            }
+        }
+    }
+
+
+
+
+
+
+
+    
+    h3{
+        font-family: @font-family-1;
+        color: @white;
+        font-size: 60px;
+       text-align: center;
+       padding: 50px 0;
+        
+    }
+
+
+    button{
+        width: 100px;
+        height: 20px;
+        margin: 0 20px
+    }
+
+    .buttons{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        width: 400px;
+        padding: 40px;
+        padding-bottom: 100px;
+        @media(@lrg-tablet){
+            width: 700px;
+        }
+        @media(@computer){
+            width: 900px;
+        }
+    }
+    
+}

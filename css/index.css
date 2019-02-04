@@ -700,3 +700,86 @@ html {
     align-items: center;
   }
 }
+.section-four {
+  width: 100%;
+  background: #FC3768;
+}
+.section-four .carousel-container {
+  width: 80%;
+}
+@media (min-width: 480px) {
+  .section-four .carousel-container {
+    margin: 0 auto;
+  }
+}
+.section-four .carousel-container .carousel-slide {
+  display: flex;
+  width: 400px;
+  height: 200px;
+  margin: 0 auto;
+  align-items: center;
+  position: relative;
+}
+@media (min-width: 780px) {
+  .section-four .carousel-container .carousel-slide {
+    width: 700px;
+    height: 350px;
+  }
+}
+@media (min-width: 1024px) {
+  .section-four .carousel-container .carousel-slide {
+    width: 900px;
+    height: 450px;
+  }
+}
+.section-four .carousel-container .carousel-slide img {
+  display: none;
+  width: 400px;
+  height: 200px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+@media (min-width: 780px) {
+  .section-four .carousel-container .carousel-slide img {
+    width: 700px;
+    height: 350px;
+  }
+}
+@media (min-width: 1024px) {
+  .section-four .carousel-container .carousel-slide img {
+    width: 900px;
+    height: 450px;
+  }
+}
+.section-four .carousel-container .carousel-slide #image-one {
+  display: block;
+}
+.section-four h3 {
+  font-family: 'Krub', sans-serif;
+  color: #EDEDED;
+  font-size: 60px;
+  text-align: center;
+  padding: 50px 0;
+}
+.section-four button {
+  width: 100px;
+  height: 20px;
+  margin: 0 20px;
+}
+.section-four .buttons {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 400px;
+  padding: 40px;
+  padding-bottom: 100px;
+}
+@media (min-width: 780px) {
+  .section-four .buttons {
+    width: 700px;
+  }
+}
+@media (min-width: 1024px) {
+  .section-four .buttons {
+    width: 900px;
+  }
+}
