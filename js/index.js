@@ -116,11 +116,7 @@ class TabLink {
 
 
 
-
-
-
-
-  //carousel info
+  //carousel stuff
 
   const carouselSlide = document.querySelector(".carousel-slide");
   const carouselImages = document.querySelectorAll(".carousel-slide img");
@@ -130,7 +126,14 @@ class TabLink {
   let counter = 1;
 
 
+
+
+
+
+
   prevButton.addEventListener("click", function(){
+
+
     Array.from(carouselImages).map(image => image.style.display = "none");
 
     if(counter>0){
@@ -174,7 +177,15 @@ class TabLink {
 
 
 
-  //character attrs
+
+
+
+
+
+
+
+
+  //Person construtor, making mock people who can show their accounts in the tabs section...
 
   class Person{
       constructor(attributes){
@@ -190,17 +201,70 @@ class TabLink {
       tellInterests(){
           return `Hey! My name is ${this.name}, i'm ${this.age}, and I love ${this.foods[0]}, ${this.movies[0]}, ${this.sports[0]}. ${this.tv[0]}, and ${this.games[0]}, along with so much more!!!`
       }
+      listFoods(){
+          return   `${this.foods.map(food =>  `I love to eat ${food}`)}`//adds spaces between array items
+      }
+      listMovies(){
+        return   `${this.movies.map(movie =>  `I love to watch ${movie}`)}`//adds spaces between array items
+      }
+      listSports(){
+        return   `${this.sports.map(sport =>  `I love to play ${sport}`)}`//adds spaces between array items
+      }
+      listTv(){
+        return   `${this.tv.map(show =>  `I love to watch ${show}`)}`//adds spaces between array items
+      }
+      listGames(){
+        return   `${this.games.map(game =>  `I love to play ${game}`)}`//adds spaces between array items
+      }
   }
 
-  let tom = new Person({
-      img: undefined,
-      name: "Tom",
-      age: 23,
-      foods: ["bacon","kale","everything else"],
-      movies: ["Forrest Gump", "Green Mile", "Tropic Thunder"],
-      sports: ["MMA", "lacrosse", "football"],
-      tv: ["Game of Thrones", "SpongeBob"],
-      games: ["What do you Meme?", "monopoly", "rubiks cubes"]
-  })
+//tab one person
+let tom = new Person({
+    img: undefined,
+    name: "Tom",
+    age: 23,
+    foods: ["bacon","kale","everything else"],
+    movies: ["Forrest Gump", "Green Mile", "Tropic Thunder"],
+    sports: ["MMA", "lacrosse", "football"],
+    tv: ["Game of Thrones", "SpongeBob"],
+    games: ["What do you Meme?", "monopoly", "rubiks cubes"]
+})
+let tabOneTitle = document.querySelector(`.content[data-tab="1"] h3`);
+let tabOneContent = document.querySelector(`.content[data-tab="1"] p`);
+tabOneContent.innerHTML = tom.tellInterests();
+tabOneTitle.innerHTML = tom.name;
 
-  console.log(tom.tellInterests());
+
+//tab two person
+let sarah = new Person({
+    img: undefined,
+    name: "Sarah",
+    age: 31,
+    foods: ["burgers","kale","everything else"],
+    movies: ["Shrek", "Green Mile", "Tropic Thunder"],
+    sports: ["ballet", "lacrosse", "football"],
+    tv: ["Friends", "SpongeBob"],
+    games: ["Mouse Trap", "monopoly", "rubiks cubes"]
+})
+let tabTwoTitle = document.querySelector(`.content[data-tab="2"] h3`);
+let tabTwoContent = document.querySelector(`.content[data-tab="2"] p`);
+tabTwoContent.innerHTML = sarah.tellInterests();
+tabTwoTitle.innerHTML = sarah.name;  
+
+
+//tab two person
+let jeff = new Person({
+    img: undefined,
+    name: "Jeff",
+    age: 17,
+    foods: ["milk shakes","kale","everything else"],
+    movies: ["Avengers", "Green Mile", "Tropic Thunder"],
+    sports: ["Baseball", "lacrosse", "football"],
+    tv: ["Jimmy Neutron", "SpongeBob"],
+    games: ["tag", "monopoly", "rubiks cubes"]
+})
+
+let tabThreeTitle = document.querySelector(`.content[data-tab="3"] h3`);
+let tabThreeContent = document.querySelector(`.content[data-tab="3"] p`);
+tabThreeContent.innerHTML = jeff.tellInterests();
+tabThreeTitle.innerHTML = jeff.name;  
