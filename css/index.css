@@ -343,6 +343,7 @@ html {
   height: 100vh;
   padding-top: 10vh;
   background: white;
+  border-bottom: 3px solid #262626;
 }
 @media (min-width: 780px) {
   .section-one .sec-one-top-flex {
@@ -443,7 +444,7 @@ html {
   position: absolute;
   width: 40px;
   height: auto;
-  right: 5px;
+  right: 0px;
   bottom: 5px;
   cursor: pointer;
   animation: OPACITYFADE 1s ease;
@@ -580,6 +581,7 @@ html {
   width: 100%;
   background: #301077;
   padding: 20px;
+  position: relative;
 }
 .section-three h3 {
   width: 100%;
@@ -687,6 +689,31 @@ html {
     width: 600px;
     height: 600px;
     padding: 0 80px;
+  }
+}
+.section-three .down-arrow {
+  position: absolute;
+  background: rgba(237, 237, 237, 0.879);
+  padding: -5px;
+  border-radius: 20px;
+  width: 30px;
+  height: auto;
+  bottom: 10px;
+  right: 0px;
+}
+@media (min-width: 480px) {
+  .section-three .down-arrow {
+    width: 40px;
+  }
+}
+@media (min-width: 780px) {
+  .section-three .down-arrow {
+    width: 50px;
+  }
+}
+@media (min-width: 1024px) {
+  .section-three .down-arrow {
+    width: 60px;
   }
 }
 @media (min-width: 780px) {

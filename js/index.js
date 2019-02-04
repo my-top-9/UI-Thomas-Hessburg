@@ -107,10 +107,6 @@ class TabLink {
     }
   }
   
-  
-  
-  
-  
   let links = document.querySelectorAll(".tab").forEach(link => new TabLink(link));
 
 
@@ -170,4 +166,41 @@ class TabLink {
     });
     
     
+  });
+
+
+
+
+
+
+
+  //character attrs
+
+  class Person{
+      constructor(attributes){
+          this.img = attributes.img;
+          this.name = attributes.name;
+          this.age = attributes.age;
+          this.foods = attributes.foods;
+          this.movies = attributes.movies;
+          this.sports = attributes.sports;
+          this.tv = attributes.tv;
+          this.games = attributes.games;
+      }
+      tellInterests(){
+          return `Hey! My name is ${this.name}, i'm ${this.age}, and I love ${this.foods[0]}, ${this.movies[0]}, ${this.sports[0]}. ${this.tv[0]}, and ${this.games[0]}, along with so much more!!!`
+      }
+  }
+
+  let tom = new Person({
+      img: undefined,
+      name: "Tom",
+      age: 23,
+      foods: ["bacon","kale","everything else"],
+      movies: ["Forrest Gump", "Green Mile", "Tropic Thunder"],
+      sports: ["MMA", "lacrosse", "football"],
+      tv: ["Game of Thrones", "SpongeBob"],
+      games: ["What do you Meme?", "monopoly", "rubiks cubes"]
   })
+
+  console.log(tom.tellInterests());
