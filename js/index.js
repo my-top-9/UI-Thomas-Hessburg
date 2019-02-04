@@ -148,7 +148,8 @@ class TabLink {
 
     TweenLite.from(".carousel-slide", 1.2, {
         ease: Bounce.easeOut,
-        scale: 2
+        scale: 1.2,
+        opacity: 0.4
     });
     
   })
@@ -164,7 +165,8 @@ class TabLink {
     carouselImages[counter].style.display = "block";
     TweenLite.from(".carousel-slide", 1.2, {
         ease: Bounce.easeOut,
-        scale: 2
+        scale: 1.2,
+        opacity: 0.4
     });
     
     

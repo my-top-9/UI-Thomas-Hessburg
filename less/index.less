@@ -472,6 +472,7 @@ html{
         margin-top: 20px;
         line-height: 52px;
         white-space: nowrap;
+        padding: 20px 0;
         span{
             font-size: 12px;
             @media (@lrg-tablet){
@@ -658,6 +659,70 @@ html{
         }
         @media(@computer){
             width: 900px;
+        }
+    }
+    
+}
+
+
+
+
+
+
+.home-footer{
+    width: 100%;
+    background: @black;
+    border-top: 2px solid @bg-color-dark;
+    padding: 10px;
+    font-family: @font-family-1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    .contact-footer{
+        width: 50%;
+        padding-bottom: 50px;
+
+        h5{
+            color: @white;
+            padding: 10px 0;
+            font-size: 20px;
+            @media(@sml-tablet){
+                font-size: 22px;
+            }
+            @media(@lrg-tablet){
+                font-size: 24px;
+            }
+            @media(@computer){
+                font-size: 28px;
+            }
+        }
+    
+        ul{
+            li{
+                color: @white;
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+    }
+    .get-it{
+        width: 50%;
+        text-align: end;
+        img{
+            width: 140px;
+            height: auto;
+            @media(@sml-tablet){
+                width: 200px;
+                height: auto;
+            }
+            @media(@lrg-tablet){
+                width: 210px;
+                height: auto;
+            }
+            @media(@computer){
+                width: 230px;
+                height: auto;
+            }
         }
     }
     

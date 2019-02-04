@@ -589,6 +589,7 @@ html {
   margin-top: 20px;
   line-height: 52px;
   white-space: nowrap;
+  padding: 20px 0;
 }
 .section-three h3 span {
   font-size: 12px;
@@ -781,5 +782,70 @@ html {
 @media (min-width: 1024px) {
   .section-four .buttons {
     width: 900px;
+  }
+}
+.home-footer {
+  width: 100%;
+  background: #262626;
+  border-top: 2px solid #9BE5F0;
+  padding: 10px;
+  font-family: 'Krub', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.home-footer .contact-footer {
+  width: 50%;
+  padding-bottom: 50px;
+}
+.home-footer .contact-footer h5 {
+  color: #EDEDED;
+  padding: 10px 0;
+  font-size: 20px;
+}
+@media (min-width: 480px) {
+  .home-footer .contact-footer h5 {
+    font-size: 22px;
+  }
+}
+@media (min-width: 780px) {
+  .home-footer .contact-footer h5 {
+    font-size: 24px;
+  }
+}
+@media (min-width: 1024px) {
+  .home-footer .contact-footer h5 {
+    font-size: 28px;
+  }
+}
+.home-footer .contact-footer ul li {
+  color: #EDEDED;
+  font-size: 14px;
+  line-height: 20px;
+}
+.home-footer .get-it {
+  width: 50%;
+  text-align: end;
+}
+.home-footer .get-it img {
+  width: 140px;
+  height: auto;
+}
+@media (min-width: 480px) {
+  .home-footer .get-it img {
+    width: 200px;
+    height: auto;
+  }
+}
+@media (min-width: 780px) {
+  .home-footer .get-it img {
+    width: 210px;
+    height: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .home-footer .get-it img {
+    width: 230px;
+    height: auto;
   }
 }
