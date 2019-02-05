@@ -235,6 +235,43 @@ tabOneContent.innerHTML = tom.tellInterests();
 tabOneTitle.innerHTML = tom.name;
 
 
+let tomSports = document.querySelector(`.content[data-tab="1"] .sports`);
+tomSports.addEventListener("click", () => {
+    tabOneContent.innerHTML = tom.listSports();
+})
+
+let tomFoods = document.querySelector(`.content[data-tab="1"] .food`);
+tomFoods.addEventListener("click", () => {
+    tabOneContent.innerHTML = tom.listFoods();
+})
+
+let tomMovies = document.querySelector(`.content[data-tab="1"] .movies`);
+tomMovies.addEventListener("click", () => {
+    tabOneContent.innerHTML = tom.listMovies();
+})
+
+let tomGames = document.querySelector(`.content[data-tab="1"] .games`);
+tomGames.addEventListener("click", () => {
+    tabOneContent.innerHTML = tom.listGames();
+})
+
+let tomTv = document.querySelector(`.content[data-tab="1"] .tv`);
+tomTv.addEventListener("click", () => {
+    tabOneContent.innerHTML = tom.listTv();
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
 //tab two person
 let sarah = new Person({
     img: undefined,
@@ -252,7 +289,45 @@ tabTwoContent.innerHTML = sarah.tellInterests();
 tabTwoTitle.innerHTML = sarah.name;  
 
 
-//tab two person
+let sarahSports = document.querySelector(`.content[data-tab="2"] .sports`);
+sarahSports.addEventListener("click", () => {
+    tabTwoContent.innerHTML = sarah.listSports();
+})
+
+let sarahFoods = document.querySelector(`.content[data-tab="2"] .food`);
+sarahFoods.addEventListener("click", () => {
+    tabTwoContent.innerHTML = sarah.listFoods();
+})
+
+let sarahMovies = document.querySelector(`.content[data-tab="2"] .movies`);
+sarahMovies.addEventListener("click", () => {
+    tabTwoContent.innerHTML = sarah.listMovies();
+})
+
+let sarahGames = document.querySelector(`.content[data-tab="2"] .games`);
+sarahGames.addEventListener("click", () => {
+    tabTwoContent.innerHTML = sarah.listGames();
+})
+
+let sarahTv = document.querySelector(`.content[data-tab="2"] .tv`);
+sarahTv.addEventListener("click", () => {
+    tabTwoContent.innerHTML = sarah.listTv();
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//tab three person
 let jeff = new Person({
     img: undefined,
     name: "Jeff",
@@ -268,3 +343,29 @@ let tabThreeTitle = document.querySelector(`.content[data-tab="3"] h3`);
 let tabThreeContent = document.querySelector(`.content[data-tab="3"] p`);
 tabThreeContent.innerHTML = jeff.tellInterests();
 tabThreeTitle.innerHTML = jeff.name;  
+
+
+let jeffSports = document.querySelector(`.content[data-tab="3"] .sports`);
+jeffSports.addEventListener("click", () => {
+    tabThreeContent.innerHTML = sarah.listSports();
+})
+
+let jeffFoods = document.querySelector(`.content[data-tab="3"] .food`);
+jeffFoods.addEventListener("click", () => {
+    tabThreeContent.innerHTML = sarah.listFoods();
+})
+
+let jeffMovies = document.querySelector(`.content[data-tab="3"] .movies`);
+jeffMovies.addEventListener("click", () => {
+    tabThreeContent.innerHTML = sarah.listMovies();
+})
+
+let jeffGames = document.querySelector(`.content[data-tab="3"] .games`);
+jeffGames.addEventListener("click", () => {
+    tabThreeContent.innerHTML = sarah.listGames();
+})
+
+let jeffTv = document.querySelector(`.content[data-tab="3"] .tv`);
+jeffTv.addEventListener("click", () => {
+    tabThreeContent.innerHTML = sarah.listTv();
+})
