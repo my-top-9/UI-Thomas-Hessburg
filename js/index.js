@@ -200,20 +200,25 @@ class TabLink {
           return `Hey! My name is ${this.name}, i'm ${this.age}, and I love ${this.foods[0]}, ${this.movies[0]}, ${this.sports[0]}. ${this.tv[0]}, and ${this.games[0]}, along with so much more!!!`
       }
       listFoods(){
-        return`I love to eat ${[...this.foods]}`;
+        let food = [...this.foods].map(food => " "+ food);
+        return`I love to eat ${food}`;
         
       }
       listMovies(){
-        return   `I love to watch ${[...this.movies]}`
+        let movies = [...this.movies].map(movie => " "+ movie);  
+        return   `I love to watch ${movies}`
       }
       listSports(){
-        return   `I love to play ${[...this.sports]}`
+        let sports = [...this.sports].map(sport => " "+ sport); 
+        return   `I love to play ${sports}`
       }
       listTv(){
-        return   `I love to watch ${[...this.tv]}`
+        let tv = [...this.tv].map(show => " "+ show); 
+        return   `I love to watch ${tv}`
       }
       listGames(){
-        return   `I love to play ${[...this.games]}`
+        let games = [...this.games].map(game => " "+ game); 
+        return   `I love to play ${games}`
       }
   }
 
@@ -234,6 +239,10 @@ let tabOneTitle = document.querySelector(`.content[data-tab="1"] h3`);
 let tabOneContent = document.querySelector(`.content[data-tab="1"] p`);
 tabOneContent.innerHTML = tom.tellInterests();
 tabOneTitle.innerHTML = tom.name;
+
+tabOneTitle.addEventListener("click",() => {
+    tabOneContent.innerHTML =  tom.tellInterests();
+})
 
 
 let tomSports = document.querySelector(`.content[data-tab="1"] .sports`);
@@ -280,6 +289,9 @@ let tabTwoContent = document.querySelector(`.content[data-tab="2"] p`);
 tabTwoContent.innerHTML = sarah.tellInterests();
 tabTwoTitle.innerHTML = sarah.name;  
 
+tabTwoTitle.addEventListener("click",() => {
+    tabTwoContent.innerHTML =  sarah.tellInterests();
+})
 
 let sarahSports = document.querySelector(`.content[data-tab="2"] .sports`);
 sarahSports.addEventListener("click", () => {
@@ -325,6 +337,10 @@ let tabThreeTitle = document.querySelector(`.content[data-tab="3"] h3`);
 let tabThreeContent = document.querySelector(`.content[data-tab="3"] p`);
 tabThreeContent.innerHTML = jeff.tellInterests();
 tabThreeTitle.innerHTML = jeff.name;  
+
+tabThreeTitle.addEventListener("click",() => {
+    tabThreeContent.innerHTML =  jeff.tellInterests();
+})
 
 
 let jeffSports = document.querySelector(`.content[data-tab="3"] .sports`);

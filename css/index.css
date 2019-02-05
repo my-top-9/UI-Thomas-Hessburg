@@ -541,6 +541,7 @@ html {
   width: 100%;
   font-size: 35px;
   background: #EDEDED;
+  cursor: pointer;
 }
 @media (min-width: 780px) {
   .section-two .content h3 {
