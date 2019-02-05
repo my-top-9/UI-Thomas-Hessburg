@@ -147,8 +147,7 @@ class TabLink {
 
     TweenLite.from(".carousel-slide", 1.2, {
         ease: Bounce.easeOut,
-        scale: 1.2,
-        opacity: 0.4
+        scale: 1.2
     });
     
   })
@@ -164,8 +163,7 @@ class TabLink {
     carouselImages[counter].style.display = "block";
     TweenLite.from(".carousel-slide", 1.2, {
         ease: Bounce.easeOut,
-        scale: 1.2,
-        opacity: 0.4
+        scale: 1.2
     });
     
     
@@ -202,21 +200,24 @@ class TabLink {
           return `Hey! My name is ${this.name}, i'm ${this.age}, and I love ${this.foods[0]}, ${this.movies[0]}, ${this.sports[0]}. ${this.tv[0]}, and ${this.games[0]}, along with so much more!!!`
       }
       listFoods(){
-          return   `${this.foods.map(food =>  `I love to eat ${food}`)}`//adds spaces between array items
+        return`I love to eat ${[...this.foods]}`;
+        
       }
       listMovies(){
-        return   `${this.movies.map(movie =>  `I love to watch ${movie}`)}`//adds spaces between array items
+        return   `I love to watch ${[...this.movies]}`
       }
       listSports(){
-        return   `${this.sports.map(sport =>  `I love to play ${sport}`)}`//adds spaces between array items
+        return   `I love to play ${[...this.sports]}`
       }
       listTv(){
-        return   `${this.tv.map(show =>  `I love to watch ${show}`)}`//adds spaces between array items
+        return   `I love to watch ${[...this.tv]}`
       }
       listGames(){
-        return   `${this.games.map(game =>  `I love to play ${game}`)}`//adds spaces between array items
+        return   `I love to play ${[...this.games]}`
       }
   }
+
+
 
 //tab one person
 let tom = new Person({
@@ -263,15 +264,6 @@ tomTv.addEventListener("click", () => {
 
 
 
-
-
-
-
-
-
-
-
-
 //tab two person
 let sarah = new Person({
     img: undefined,
@@ -313,16 +305,6 @@ let sarahTv = document.querySelector(`.content[data-tab="2"] .tv`);
 sarahTv.addEventListener("click", () => {
     tabTwoContent.innerHTML = sarah.listTv();
 })
-
-
-
-
-
-
-
-
-
-
 
 
 
