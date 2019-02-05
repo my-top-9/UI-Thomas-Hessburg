@@ -555,12 +555,18 @@ html {
 }
 .section-two .content .show-me-buttons {
   width: 100%;
-  text-align: center;
+  text-align: start;
+  margin-left: 20px;
 }
 .section-two .content .show-me-buttons button {
+  cursor: pointer;
   width: 50px;
   height: 29px;
   margin: 5px 0;
+}
+.section-two .content .show-me-buttons button:hover {
+  background: #FC3768;
+  color: #EDEDED;
 }
 .section-two .tabs-item-selected {
   display: flex;

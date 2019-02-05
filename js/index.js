@@ -38,25 +38,17 @@ TweenLite.from(".section-one .people .man-woman:nth-child(1)", 1.7, {
 
 
 
-//basic event listeners
+//nav button event listeners
 navButton.addEventListener("click", function(){
     mainContainer.classList.toggle("body-toggle-class");
     body.classList.toggle("body-cover")
     nav.classList.toggle("nav-display-toggle");
 })
-
 closeNav.addEventListener("click", function(){
     mainContainer.classList.toggle("body-toggle-class");
     body.classList.toggle("body-cover")
     nav.classList.toggle("nav-display-toggle");  
 })
-
-
-
-
-
-
-
 
 
 //tabs component section
@@ -89,25 +81,23 @@ class TabLink {
       
       this.tabItem.select(this.element);
     }
-  }
+}
   
-  
-  
-  class TabItem {
+class TabItem {
     constructor(element) {
-      this.element = element;
+    this.element = element;
     }
-  
+
     select() {
-      let items = document.querySelectorAll(".content");
-     
-      items.forEach(item => item.classList.remove("tabs-item-selected"));
-     
-      this.element.classList.add("tabs-item-selected");
+    let items = document.querySelectorAll(".content");
+    
+    items.forEach(item => item.classList.remove("tabs-item-selected"));
+    
+    this.element.classList.add("tabs-item-selected");
     }
-  }
-  
-  let links = document.querySelectorAll(".tab").forEach(link => new TabLink(link));
+}
+
+let links = document.querySelectorAll(".tab").forEach(link => new TabLink(link));
 
 
 
@@ -116,254 +106,164 @@ class TabLink {
 
 
 
-  //carousel stuff
+//carousel stuff
 
-  const carouselSlide = document.querySelector(".carousel-slide");
-  const carouselImages = document.querySelectorAll(".carousel-slide img");
-  const prevButton = document.querySelector("#prevButton");
-  const nextButton = document.querySelector("#nextButton");
+const carouselSlide = document.querySelector(".carousel-slide");
+const carouselImages = document.querySelectorAll(".carousel-slide img");
+const prevButton = document.querySelector("#prevButton");
+const nextButton = document.querySelector("#nextButton");
 
-  let counter = 1;
+let counter = 0;
 
-
-
-
+prevButton.addEventListener("click", function(){
 
 
+Array.from(carouselImages).map(image => image.style.display = "none");
 
-  prevButton.addEventListener("click", function(){
+if(counter>0){
+    counter--;
+}else{
+    counter = 6;
+}
+
+carouselImages[counter].style.display = "block";
 
 
-    Array.from(carouselImages).map(image => image.style.display = "none");
+TweenLite.from(".carousel-slide", 1.2, {
+    ease: Bounce.easeOut,
+    scale: 1.2
+});
 
-    if(counter>0){
-        counter--;
-    }else{
-        counter = 6;
+})
+
+nextButton.addEventListener("click", function(){
+Array.from(carouselImages).map(image => image.style.display = "none");
+if(counter<6){
+    counter++;
+}else{
+    counter = 0;
+}
+
+carouselImages[counter].style.display = "block";
+TweenLite.from(".carousel-slide", 1.2, {
+    ease: Bounce.easeOut,
+    scale: 1.2
+});
+
+
+});
+
+
+
+
+
+//Person construtor, making mock people who can show their accounts in the tabs section...
+
+class Person{
+    constructor(attributes){
+        this.img = attributes.img;
+        this.name = attributes.name;
+        this.age = attributes.age;
+        this.foods = attributes.foods;
+        this.movies = attributes.movies;
+        this.sports = attributes.sports;
+        this.tv = attributes.tv;
+        this.games = attributes.games;
+        this.data = attributes.data;
+            
+        let currentTab = document.querySelector(`.content[data-tab="${this.data}"] p`);//get current tab
+        let sports = document.querySelector(`.content[data-tab="${this.data}"] .sports`);//get sports button
+        let foods = document.querySelector(`.content[data-tab="${this.data}"] .food`);//get foods button
+        let movies = document.querySelector(`.content[data-tab="${this.data}"] .movies`);//get movies button
+        let gamesButton = document.querySelector(`.content[data-tab="${this.data}"] .games`);//get games button
+        let tvButton = document.querySelector(`.content[data-tab="${this.data}"] .tv`);//get tv button
+
+        let tabTitle = document.querySelector(`.content[data-tab="${this.data}"] h3`);//get header to place name
+        let tabContent = document.querySelector(`.content[data-tab="${this.data}"] p`);//get p tag to place content
+        let profImage = document.querySelector(`.content[data-tab="${this.data}"] .content-top img`);//get img to add to source;
+        tabContent.innerHTML = this.tellInterests();//set default content to a list of some basic interests
+        tabTitle.innerHTML = this.name;//sets header to the persons name
+        profImage.src = this.img; //sets image source to img passed in
+
+
+        tabTitle.addEventListener("click",() => {     //click persons name to return to list of basic interests
+        tabContent.innerHTML =  this.tellInterests();
+        })
+
+        sports.addEventListener("click", () => {//click sports button to change content to list of sports
+        currentTab.innerHTML = this.listSports();
+        })
+        foods.addEventListener("click", () => {//click foods button to change content to list of foods
+        currentTab.innerHTML = this.listFoods();
+        })
+        movies.addEventListener("click", () => {//click movies button to change content to list of movies
+        currentTab.innerHTML = this.listMovies();
+        })
+        gamesButton.addEventListener("click", () => {//click games button to change content to list of games
+        currentTab.innerHTML = this.listGames();
+        })
+        tvButton.addEventListener("click", () => {//click tv button to change content to list of tv
+        currentTab.innerHTML = this.listTv();
+        })
+
     }
-    
-    carouselImages[counter].style.display = "block";
-
-
-    TweenLite.from(".carousel-slide", 1.2, {
-        ease: Bounce.easeOut,
-        scale: 1.2
-    });
-    
-  })
-
-  nextButton.addEventListener("click", function(){
-    Array.from(carouselImages).map(image => image.style.display = "none");
-    if(counter<6){
-        counter++;
-    }else{
-        counter = 0;
+    tellInterests(){
+        return `Hey! My name is ${this.name}, i'm ${this.age}, and I love ${this.foods[0]}, ${this.movies[0]}, ${this.sports[0]}. ${this.tv[0]}, and ${this.games[0]}, along with so much more!!!`
     }
+    listFoods(){
+    let food = [...this.foods].map(food => " "+ food);
+    return`I love to eat ${food}.`;
     
-    carouselImages[counter].style.display = "block";
-    TweenLite.from(".carousel-slide", 1.2, {
-        ease: Bounce.easeOut,
-        scale: 1.2
-    });
-    
-    
-  });
+    }
+    listMovies(){
+    let movies = [...this.movies].map(movie => " "+ movie);  
+    return   `I love to watch ${movies}.`;
+    }
+    listSports(){
+    let sports = [...this.sports].map(sport => " "+ sport); 
+    return   `I love to play ${sports}.`;
+    }
+    listTv(){
+    let tv = [...this.tv].map(show => " "+ show); 
+    return   `I love to watch ${tv}.`;
+    }
+    listGames(){
+    let games = [...this.games].map(game => " "+ game); 
+    return   `I love to play ${games}.`;
+    }
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  //Person construtor, making mock people who can show their accounts in the tabs section...
-
-  class Person{
-      constructor(attributes){
-          this.img = attributes.img;
-          this.name = attributes.name;
-          this.age = attributes.age;
-          this.foods = attributes.foods;
-          this.movies = attributes.movies;
-          this.sports = attributes.sports;
-          this.tv = attributes.tv;
-          this.games = attributes.games;
-      }
-      tellInterests(){
-          return `Hey! My name is ${this.name}, i'm ${this.age}, and I love ${this.foods[0]}, ${this.movies[0]}, ${this.sports[0]}. ${this.tv[0]}, and ${this.games[0]}, along with so much more!!!`
-      }
-      listFoods(){
-        let food = [...this.foods].map(food => " "+ food);
-        return`I love to eat ${food}`;
-        
-      }
-      listMovies(){
-        let movies = [...this.movies].map(movie => " "+ movie);  
-        return   `I love to watch ${movies}`
-      }
-      listSports(){
-        let sports = [...this.sports].map(sport => " "+ sport); 
-        return   `I love to play ${sports}`
-      }
-      listTv(){
-        let tv = [...this.tv].map(show => " "+ show); 
-        return   `I love to watch ${tv}`
-      }
-      listGames(){
-        let games = [...this.games].map(game => " "+ game); 
-        return   `I love to play ${games}`
-      }
-  }
-
-
-
-//tab one person
 let tom = new Person({
-    img: undefined,
+    img: "https://source.unsplash.com/random/300x300/?people,outdoors",
     name: "Tom",
     age: 23,
     foods: ["bacon","kale","everything else"],
     movies: ["Forrest Gump", "Green Mile", "Tropic Thunder"],
     sports: ["MMA", "lacrosse", "football"],
     tv: ["Game of Thrones", "SpongeBob"],
-    games: ["What do you Meme?", "monopoly", "rubiks cubes"]
+    games: ["What do you Meme?", "monopoly", "rubiks cubes"],
+    data: 1
 })
-let tabOneTitle = document.querySelector(`.content[data-tab="1"] h3`);
-let tabOneContent = document.querySelector(`.content[data-tab="1"] p`);
-tabOneContent.innerHTML = tom.tellInterests();
-tabOneTitle.innerHTML = tom.name;
-
-tabOneTitle.addEventListener("click",() => {
-    tabOneContent.innerHTML =  tom.tellInterests();
-})
-
-
-let tomSports = document.querySelector(`.content[data-tab="1"] .sports`);
-tomSports.addEventListener("click", () => {
-    tabOneContent.innerHTML = tom.listSports();
-})
-
-let tomFoods = document.querySelector(`.content[data-tab="1"] .food`);
-tomFoods.addEventListener("click", () => {
-    tabOneContent.innerHTML = tom.listFoods();
-})
-
-let tomMovies = document.querySelector(`.content[data-tab="1"] .movies`);
-tomMovies.addEventListener("click", () => {
-    tabOneContent.innerHTML = tom.listMovies();
-})
-
-let tomGames = document.querySelector(`.content[data-tab="1"] .games`);
-tomGames.addEventListener("click", () => {
-    tabOneContent.innerHTML = tom.listGames();
-})
-
-let tomTv = document.querySelector(`.content[data-tab="1"] .tv`);
-tomTv.addEventListener("click", () => {
-    tabOneContent.innerHTML = tom.listTv();
-})
-
-
-
-
-//tab two person
 let sarah = new Person({
-    img: undefined,
+    img: "https://source.unsplash.com/random/300x300/?people,outdoors",
     name: "Sarah",
     age: 31,
     foods: ["burgers","kale","everything else"],
     movies: ["Shrek", "Green Mile", "Tropic Thunder"],
     sports: ["ballet", "lacrosse", "football"],
     tv: ["Friends", "SpongeBob"],
-    games: ["Mouse Trap", "monopoly", "rubiks cubes"]
+    games: ["Mouse Trap", "monopoly", "rubiks cubes"],
+    data: 2
 })
-let tabTwoTitle = document.querySelector(`.content[data-tab="2"] h3`);
-let tabTwoContent = document.querySelector(`.content[data-tab="2"] p`);
-tabTwoContent.innerHTML = sarah.tellInterests();
-tabTwoTitle.innerHTML = sarah.name;  
-
-tabTwoTitle.addEventListener("click",() => {
-    tabTwoContent.innerHTML =  sarah.tellInterests();
-})
-
-let sarahSports = document.querySelector(`.content[data-tab="2"] .sports`);
-sarahSports.addEventListener("click", () => {
-    tabTwoContent.innerHTML = sarah.listSports();
-})
-
-let sarahFoods = document.querySelector(`.content[data-tab="2"] .food`);
-sarahFoods.addEventListener("click", () => {
-    tabTwoContent.innerHTML = sarah.listFoods();
-})
-
-let sarahMovies = document.querySelector(`.content[data-tab="2"] .movies`);
-sarahMovies.addEventListener("click", () => {
-    tabTwoContent.innerHTML = sarah.listMovies();
-})
-
-let sarahGames = document.querySelector(`.content[data-tab="2"] .games`);
-sarahGames.addEventListener("click", () => {
-    tabTwoContent.innerHTML = sarah.listGames();
-})
-
-let sarahTv = document.querySelector(`.content[data-tab="2"] .tv`);
-sarahTv.addEventListener("click", () => {
-    tabTwoContent.innerHTML = sarah.listTv();
-})
-
-
-
-
-//tab three person
 let jeff = new Person({
-    img: undefined,
+    img: "https://source.unsplash.com/random/300x300/?people,outdoors",
     name: "Jeff",
     age: 17,
     foods: ["milk shakes","kale","everything else"],
     movies: ["Avengers", "Green Mile", "Tropic Thunder"],
     sports: ["Baseball", "lacrosse", "football"],
     tv: ["Jimmy Neutron", "SpongeBob"],
-    games: ["tag", "monopoly", "rubiks cubes"]
-})
-
-let tabThreeTitle = document.querySelector(`.content[data-tab="3"] h3`);
-let tabThreeContent = document.querySelector(`.content[data-tab="3"] p`);
-tabThreeContent.innerHTML = jeff.tellInterests();
-tabThreeTitle.innerHTML = jeff.name;  
-
-tabThreeTitle.addEventListener("click",() => {
-    tabThreeContent.innerHTML =  jeff.tellInterests();
-})
-
-
-let jeffSports = document.querySelector(`.content[data-tab="3"] .sports`);
-jeffSports.addEventListener("click", () => {
-    tabThreeContent.innerHTML = sarah.listSports();
-})
-
-let jeffFoods = document.querySelector(`.content[data-tab="3"] .food`);
-jeffFoods.addEventListener("click", () => {
-    tabThreeContent.innerHTML = sarah.listFoods();
-})
-
-let jeffMovies = document.querySelector(`.content[data-tab="3"] .movies`);
-jeffMovies.addEventListener("click", () => {
-    tabThreeContent.innerHTML = sarah.listMovies();
-})
-
-let jeffGames = document.querySelector(`.content[data-tab="3"] .games`);
-jeffGames.addEventListener("click", () => {
-    tabThreeContent.innerHTML = sarah.listGames();
-})
-
-let jeffTv = document.querySelector(`.content[data-tab="3"] .tv`);
-jeffTv.addEventListener("click", () => {
-    tabThreeContent.innerHTML = sarah.listTv();
+    games: ["tag", "monopoly", "rubiks cubes"],
+    data: 3
 })
