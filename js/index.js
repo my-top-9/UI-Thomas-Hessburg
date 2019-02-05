@@ -231,11 +231,11 @@ class Person{
     let games = [...this.games].map(game => " "+ game); 
     return   `I love to play ${games}.`;
     }
-}
+}//person constructor for info to populate tabs
 
 
 let tom = new Person({
-    img: "https://source.unsplash.com/random/300x300/?people,outdoors",
+    img: "https://source.unsplash.com/random/300x300/?people,man",
     name: "Tom",
     age: 23,
     foods: ["bacon","kale","everything else"],
@@ -244,9 +244,9 @@ let tom = new Person({
     tv: ["Game of Thrones", "SpongeBob"],
     games: ["What do you Meme?", "monopoly", "rubiks cubes"],
     data: 1
-})
+})//populated in tab 1
 let sarah = new Person({
-    img: "https://source.unsplash.com/random/300x300/?people,outdoors",
+    img: "https://source.unsplash.com/random/300x300/?people,woman",
     name: "Sarah",
     age: 31,
     foods: ["burgers","kale","everything else"],
@@ -255,9 +255,9 @@ let sarah = new Person({
     tv: ["Friends", "SpongeBob"],
     games: ["Mouse Trap", "monopoly", "rubiks cubes"],
     data: 2
-})
+})//populated in tab 2
 let jeff = new Person({
-    img: "https://source.unsplash.com/random/300x300/?people,outdoors",
+    img: "https://source.unsplash.com/random/300x300/?people,boy",
     name: "Jeff",
     age: 17,
     foods: ["milk shakes","kale","everything else"],
@@ -266,4 +266,4 @@ let jeff = new Person({
     tv: ["Jimmy Neutron", "SpongeBob"],
     games: ["tag", "monopoly", "rubiks cubes"],
     data: 3
-})
+})//populated in tab 3
