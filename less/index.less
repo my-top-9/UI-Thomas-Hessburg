@@ -159,6 +159,7 @@ html{
     top: 0;
     margin-bottom: -10vh;
     z-index: 1;
+    white-space: nowrap;
 
     h2{
         font-size: 35px;
@@ -669,16 +670,22 @@ html{
 }
 
 .s-three-top-container{
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     @media (@lrg-tablet){
         display: flex;
-
+        flex-direction: row;
     }  
 } 
 .s-three-bottom-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     @media (@lrg-tablet){
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }  
