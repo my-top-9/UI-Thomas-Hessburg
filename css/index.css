@@ -135,6 +135,59 @@ body {
 html {
   scroll-behavior: smooth;
 }
+.about-page {
+  padding-top: 100px;
+  display: block;
+  background: #262626;
+  width: 100%;
+  font-family: 'Krub', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 780px) {
+  .about-page {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+.about-page h3 {
+  text-align: center;
+  font-size: 50px;
+  width: 100%;
+  color: white;
+  margin-bottom: 20px;
+}
+@media (min-width: 780px) {
+  .about-page h3 {
+    font-size: 100px;
+  }
+}
+.about-page .picture {
+  width: 90%;
+  max-width: 350px;
+  height: 400px;
+  background: #EDEDED;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+.about-page .picture img {
+  width: 80%;
+  height: auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  margin: 30px;
+}
+.about-page .picture h4 {
+  font-size: 30px;
+  padding: 20px;
+  padding-bottom: 0;
+  font-family: 'Krub', sans-serif;
+}
 .main-nav {
   width: 80%;
   height: 80vh;
@@ -406,6 +459,11 @@ html {
   text-align: center;
   animation: OPACITYFADE 1.5s ease;
 }
+@media (min-width: 780px) {
+  .section-one .sec-one-dash-two .activities {
+    margin-top: 20px;
+  }
+}
 .section-one .sec-one-dash-two .activities .activity {
   width: 45px;
   height: auto;
@@ -559,6 +617,10 @@ html {
   width: 100%;
   text-align: start;
   margin-left: 20px;
+}
+.section-two .content .show-me-buttons h4 {
+  color: #EDEDED;
+  font-family: 'Krub', sans-serif;
 }
 .section-two .content .show-me-buttons button {
   cursor: pointer;
@@ -714,24 +776,28 @@ html {
     font-size: 28px;
   }
 }
+.section-three .section-three-info:nth-child(2) {
+  margin: 10px 0;
+  padding: 0;
+}
 .section-three .graphic {
   width: 100%;
   height: auto;
-  padding: 0 80px;
+  max-width: 300px;
+  margin: 15px auto;
 }
 @media (min-width: 780px) {
   .section-three .graphic {
-    width: 40%;
-    max-width: 600px;
+    width: 50%;
+    max-width: 350px;
     height: auto;
   }
 }
 @media (min-width: 1024px) {
   .section-three .graphic {
-    width: 40%;
+    width: 100%;
     height: auto;
-    max-width: 600px;
-    padding: 0 80px;
+    max-width: 400px;
   }
 }
 .section-three .down-arrow {

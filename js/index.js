@@ -50,6 +50,20 @@ closeNav.addEventListener("click", function(){
     nav.classList.toggle("nav-display-toggle");  
 })
 
+let meetPeople = document.querySelector(".main-nav .meet-people");
+meetPeople.addEventListener("click", function(){
+    mainContainer.classList.toggle("body-toggle-class");
+    body.classList.toggle("body-cover")
+    nav.classList.toggle("nav-display-toggle");  
+})
+let findFriends = document.querySelector(".main-nav .find-friends");
+findFriends.addEventListener("click", function(){
+    mainContainer.classList.toggle("body-toggle-class");
+    body.classList.toggle("body-cover")
+    nav.classList.toggle("nav-display-toggle");  
+})
+
+
 
 //tabs component section
 class TabLink {
@@ -208,28 +222,28 @@ class Person{
 
     }
     tellInterests(){
-        return `Hey! My name is ${this.name}, i'm ${this.age}, and I love ${this.foods[0]}, ${this.movies[0]}, ${this.sports[0]}. ${this.tv[0]}, and ${this.games[0]}, along with so much more!!!`
+        return `Hey! My name is <span style="color: rgb(67, 151, 164);">${this.name}</span>, i'm <span style="color: rgb(67, 151, 164);">${this.age}</span>, and I love <span style="color: #FC3768;">${this.foods[0]}, ${this.movies[0]}, ${this.sports[0]}. ${this.tv[0]}</span>, and <span style="color: #FC3768;">${this.games[0]}</span>, along with so much more!!!`
     }
     listFoods(){
     let food = [...this.foods].map(food => " "+ food);
-    return`I love to eat ${food}.`;
+    return`I love to eat:<br><span style="color: #FC3768;">${food}</span>.`;
     
     }
     listMovies(){
     let movies = [...this.movies].map(movie => " "+ movie);  
-    return   `I love to watch ${movies}.`;
+    return   `I love to watch:<br><span style="color: #FC3768;">${movies}</span>.`;
     }
     listSports(){
     let sports = [...this.sports].map(sport => " "+ sport); 
-    return   `I love to play ${sports}.`;
+    return   `I love to play:<br><span style="color: #FC3768;">${sports}</span>.`;
     }
     listTv(){
     let tv = [...this.tv].map(show => " "+ show); 
-    return   `I love to watch ${tv}.`;
+    return   `I love to watch:<br><span style="color: #FC3768;">${tv}</span>.`;
     }
     listGames(){
     let games = [...this.games].map(game => " "+ game); 
-    return   `I love to play ${games}.`;
+    return   `I love to play:<br><span style="color: #FC3768;">${games}</span>.`;
     }
 }//person constructor for info to populate tabs
 
@@ -238,32 +252,32 @@ let tom = new Person({
     img: "https://source.unsplash.com/random/300x300/?people,man",
     name: "Tom",
     age: 23,
-    foods: ["bacon","kale","everything else"],
-    movies: ["Forrest Gump", "Green Mile", "Tropic Thunder"],
-    sports: ["MMA", "lacrosse", "football"],
-    tv: ["Game of Thrones", "SpongeBob"],
-    games: ["What do you Meme?", "monopoly", "rubiks cubes"],
+    foods: ["bacon","kale","pizza","burgers","toast","cereal","chic-fil-a","tostidos","and everything else"],
+    movies: ["Forrest Gump", "Green Mile", "Tropic Thunder","Lovely","Kung-Fu-Panda","Windows","BumbleBee","Spider-Man","and A Quiet Place"],
+    sports: ["MMA", "lacrosse", "football","water polo","ping-pong","fencing","tennis","hockey","and archery"],
+    tv: ["Game of Thrones", "SpongeBob","Big Bang Theory","Stranger Things","Doctor Who","Black Mirror","Arrow","SNL","and Riverdale"],
+    games: ["What do you Meme?", "Monopoly", "puzzles", "minecraft","tetris","Doom","Madden","Fortnite","and Fallout"],
     data: 1
 })//populated in tab 1
 let sarah = new Person({
     img: "https://source.unsplash.com/random/300x300/?people,woman",
     name: "Sarah",
     age: 31,
-    foods: ["burgers","kale","everything else"],
-    movies: ["Shrek", "Green Mile", "Tropic Thunder"],
-    sports: ["ballet", "lacrosse", "football"],
-    tv: ["Friends", "SpongeBob"],
-    games: ["Mouse Trap", "monopoly", "rubiks cubes"],
+    foods: ["pub subs","kale","pizza","burgers","toast","cereal","chic-fil-a","tostidos","and everything else"],
+    movies: ["Spy Kids", "Green Mile", "Tropic Thunder","Lovely","Kung-Fu-Panda","Windows","BumbleBee","Spider-Man","and A Quiet Place"],
+    sports: ["ballet", "lacrosse", "football","water polo","ping-pong","fencing","tennis","hockey","and archery"],
+    tv: ["Shameless", "SpongeBob","Big Bang Theory","Stranger Things","Doctor Who","Black Mirror","Arrow","SNL","and Riverdale"],
+    games: ["Rocket League", "Monopoly", "puzzles", "minecraft","tetris","Doom","Madden","Fortnite","and Fallout"],
     data: 2
 })//populated in tab 2
 let jeff = new Person({
     img: "https://source.unsplash.com/random/300x300/?people,boy",
     name: "Jeff",
     age: 17,
-    foods: ["milk shakes","kale","everything else"],
-    movies: ["Avengers", "Green Mile", "Tropic Thunder"],
-    sports: ["Baseball", "lacrosse", "football"],
-    tv: ["Jimmy Neutron", "SpongeBob"],
-    games: ["tag", "monopoly", "rubiks cubes"],
+    foods: ["poptarts","kale","pizza","burgers","toast","cereal","chic-fil-a","tostidos","and everything else"],
+    movies: ["BRINK!", "Green Mile", "Tropic Thunder","Lovely","Kung-Fu-Panda","Windows","BumbleBee","Spider-Man","and A Quiet Place"],
+    sports: ["soccer", "lacrosse", "football","water polo","ping-pong","fencing","tennis","hockey","and archery"],
+    tv: ["Handmaid's Tail", "SpongeBob","Big Bang Theory","Stranger Things","Doctor Who","Black Mirror","Arrow","SNL","and Riverdale"],
+    games: ["Mario Bros", "Monopoly", "puzzles", "minecraft","tetris","Doom","Madden","Fortnite","and Fallout"],
     data: 3
 })//populated in tab 3

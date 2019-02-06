@@ -17,6 +17,62 @@ html{
 }
 
 
+
+
+
+.about-page{
+    padding-top: 100px;
+    display: block;
+    background: @black;
+    width: 100%;
+    font-family: @font-family-1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media(@lrg-tablet){
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    h3{
+        text-align: center;
+        font-size: 50px;
+        width: 100%;
+        color: white;
+        margin-bottom: 20px;
+        @media(@lrg-tablet){
+            font-size: 100px;
+        }
+    }
+    .picture{
+        width: 90%;
+        max-width: 350px;
+        height: 400px;
+        background: @white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        img{
+            width: 80%;
+            height: auto;
+            box-shadow: 0 0 15px rgba(0,0,0,0.4);
+            margin: 30px;
+        }
+        h4{
+            font-size: 30px;
+            padding: 20px;
+            padding-bottom: 0;
+            font-family: @font-family-1;
+        }
+    }
+}
+
+
+
+
 .main-nav{
     width: 80%;
     height: 80vh;
@@ -294,6 +350,9 @@ html{
             margin-top: 70px;
             text-align: center;
             animation: OPACITYFADE 1.5s ease;
+            @media (@lrg-tablet){
+                margin-top: 20px;
+            }
             .activity{
 
                 width: 45px;
@@ -432,6 +491,10 @@ html{
             width: 100%;
             text-align: start;
             margin-left:20px;
+            h4{
+                color: @white;
+                font-family: @font-family-1;
+            }
             button{
                 cursor: pointer;
                 width: 50px;
@@ -556,21 +619,26 @@ html{
                 }
             }
         } 
+        .section-three-info:nth-child(2){
+            margin: 10px 0;
+            padding: 0;
+        }
     
     .graphic{
         width: 100%;
         height: auto;
-        padding: 0 80px;
+        max-width: 300px;
+        margin: 15px auto;
+
         @media (@lrg-tablet){
-        width: 40%;
-        max-width: 600px;
+        width: 50%;
+        max-width: 350px;
         height: auto;
         }
         @media (@computer){
-        width: 40%;
+        width: 100%;
         height: auto;
-        max-width: 600px;
-        padding: 0 80px;
+        max-width: 400px;
         }
     }
     .down-arrow{
@@ -761,3 +829,5 @@ html{
     }
     
 }
+
+
